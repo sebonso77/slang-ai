@@ -28,11 +28,12 @@ textarea, input {
 </style>
 """, unsafe_allow_html=True)
 
+st.write("Secrets keys:", list(st.secrets.keys()))
+# client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 client = OpenAI(api_key=st.secrets["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"])
-
 st.title("ネイティブ英語翻訳AI")
 
-text = st.text_area("日本語を入力してね")
+text = st.text_area("日本語を入力")
 
 if st.button("翻訳する"):
     response = client.chat.completions.create(
