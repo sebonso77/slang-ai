@@ -38,7 +38,8 @@ text = st.text_area("日本語を入力")
 
 if st.button("翻訳する"):
     response = client.chat.completions.create(
-        model="gpt-4.1",
+        # model="gpt-4.1",
+        model="gpt-4-turbo",
         temperature=0.7,
         messages=[
             {
